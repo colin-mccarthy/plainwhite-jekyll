@@ -8,7 +8,9 @@ you need to add future: true to config.yaml
 future: true
 ```
 
-## Add images
+## Images
+
+examples:
 
 ```yaml
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
