@@ -1,8 +1,6 @@
 # plainwhite
 
-## Date on posts
-
-Future dated posts are not *automatically rendered* at or after the prescribed time
+## Future dated posts are not *automatically rendered* at or after the prescribed time
 
 you need to add future: true to config.yaml
 
