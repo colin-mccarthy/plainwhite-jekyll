@@ -8,4 +8,4 @@ Many Engineerd I talk to are facing an request to move their apps and infrastruc
 
 
 
-<img src="./pics/test.png" width="450"> 
+![Clusters](/pics/test.png)
