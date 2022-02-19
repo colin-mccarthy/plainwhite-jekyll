@@ -1,5 +1,18 @@
 # plainwhite
 
+## Add images
+```
+![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
+
+![image](/plainwhite-jekyll/pics/test.png){: width="450" }
+
+<img src="/plainwhite-jekyll/pics/test.png" alt="">
+
+![image-title-here](/plainwhite-jekyll/pics/test.png){:class="img-responsive"}
+```
+
+
+
 Simplistic jekyll portfolio-style theme for writers.
 
 **Demo**: [samarsault.com](https://samarsault.com)
