@@ -9,6 +9,8 @@ My question to them is this, if you asked again a year from now how quickly can 
 
 This is why I want to bring up the idea of an abstration layer for Kubernetes. Your developers should not need to care about where the clusters live as long as they have a kubernetes dial tone. Tanzu Mission Control gives you an interface to launch and manage many Kubernetes clusters in any or all of the major cloud providers and also cloud based or on prem Vsphere environments. You can create and delete cluster all from a single pane of glass using a SaaS based tool all from your web browser.
 
+![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
+
 
 Tanzu Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle, SIG in this context stands for special interest group. And this is the group that is focused on streamlining and improving the Cluster Lifecycle Management for Kubernetes clusters, In an Open Source fashion. Cluster API provides Kubernetes style API's and patterns. These are declarative API's that allow you as a cluster operator, or cluster admin to declaratively define what a cluster should look like, and then have cluster API. Reconcile that or realize that declarative definition.
 
@@ -40,7 +42,7 @@ I can also see events here inspections, I can it's, we have a several different 
 
 
 
-![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
+
 
 
 
