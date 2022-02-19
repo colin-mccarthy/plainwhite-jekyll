@@ -20,6 +20,26 @@ To accomplish Lifecycle Management cluster API also uses the concept of a provid
 
 As a cluster admin you should be able to, create Kubernetes clusters by filling out a few fileds in Mission Contrlo and then have The Cluster API Management cluster in this case, actually go out and create the cluster and bootstrap it and get it running to your definition.
 
+Yeah, so Tanzu Mission Control is a SaaS offering that gives you the ability to manage any Kubernetes cluster, regardless if it's in Vsphere, or not. So this will allow you to basically take any Kubernetes distribution that's aligned to open source, and effectively manage that. Mission Control is using Cluster API behind the scenes.
+
+As you can see, here, I have a couple of different examples deployed, I have an AKs cluster, I have a vSphere cluster, I have, an Eks, cluster GCP clusters, I can manage all these clusters from one single pane of glass.
+
+So if you want to have an autometed solution for deploying cluster this is that solution. Does that make sense? This takes the Vsphere Cluster API subject we just spoke about to the next level. It's automated and works on any cloud.
+
+There's a concept of cluster groups within TMC. So cluster groups allow me to basically bucket these clusters into different groups. So for example, I can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. So as you can see, I have a couple of groups here,
+
+I can basically apply policies such as network policy, security policies, Quota Management, you know, things I can do things such as, you know, if I didn't want my developers deploying applications from an unknown Container Registry outside of our network, I can prevent them from doing so. I can do a lot of things such as, like I said, before, image registry policies, I can block the latest tag, which is kind of a best practice, not use the latest tag, you know, to actually version your images. So you can really control the behavior and enforce good behavior within your environment.
+
+This is pretty extensive, you also get a dashboard view of what's actually going on in this environment. As you can see, I have a couple of different policies that are being violated, especially my security policies here. So I can quickly glance at any bad actors within this environment, to see what actually is going on there.
+
+And you can set these as audit rules as well. So when you're first rollout TMC or you don't want to be too restrictive to your developers, you can set an audit setting that basically only alerts you when they're violating these policies. And that way, you can, have a nice conversation with the developer and say, this is how you should be doing things.
+
+But something also want to highlight is that, we also have backup and recovery of these Kubernetes clusters. So, data protection, I can go in and make multiple backups, I can select the backup, and then restore from that all these backups can be, set on some type of cron schedule where, I can run every night or you know, every hour or whatever, what have you.
+
+I can also see events here inspections, I can it's, we have a several different inspection tools that you can use. I can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
+
+I could literally spend all day going through TMC, but I'll be more than happy to set up a separate session. So then we can actually deep dive and, you know, try out a couple of things here.
+
 
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
 
