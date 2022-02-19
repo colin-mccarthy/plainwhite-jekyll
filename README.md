@@ -1,7 +1,8 @@
 # plainwhite
 
 ## Add images
-```
+
+```yaml
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
 
 ![image](/plainwhite-jekyll/pics/test.png){: width="450" }
