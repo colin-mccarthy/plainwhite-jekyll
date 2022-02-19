@@ -10,6 +10,7 @@ Many Engineers I talk to are facing an request to move their apps and infrastruc
 
 ![image](/pics/test.png)
 
-<img src="/pics/test.pngg" alt="">
+<img src="/pics/test.png" alt="">
 
+![image-title-here](/pics/test.png){:class="img-responsive"}
 
