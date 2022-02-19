@@ -55,6 +55,8 @@ plainwhite:
 # Build settings
 theme: jekyll-theme-tactile
 
+future: true
+
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
