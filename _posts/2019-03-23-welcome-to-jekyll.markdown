@@ -6,6 +6,6 @@ categories: Javascript NodeJS
 ---
 Many Engineers I talk to are facing an request to move their apps and infrastructure to a particular cloud provider. They are often asking me about going fully GCP native or fully Azure native. 
 
+![Clusters]({{ site.url }}/pics/test.png)
 
 
-![Clusters](/pics/test.png)
