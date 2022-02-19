@@ -20,7 +20,7 @@ To accomplish Lifecycle Management cluster API also uses the concept of a provid
 
 As a cluster admin you should be able to, create Kubernetes clusters by filling out a few fileds in Mission Contrlo and then have The Cluster API Management cluster in this case, actually go out and create the cluster and bootstrap it and get it running to your definition.
 
-Yeah, so Tanzu Mission Control is a SaaS offering that gives you the ability to manage any Kubernetes cluster, regardless if it's in Vsphere, or not. So this will allow you to basically take any Kubernetes distribution that's aligned to open source, and effectively manage that. Mission Control is using Cluster API behind the scenes.
+Tanzu Mission Control is a SaaS offering that gives you the ability to manage any Kubernetes cluster, regardless if it's in Vsphere, or not.  Mission Control is using Cluster API behind the scenes.
 
 As you can see, here, I have a couple of different examples deployed, I have an AKs cluster, I have a vSphere cluster, I have, an Eks, cluster GCP clusters, I can manage all these clusters from one single pane of glass.
 
