@@ -10,4 +10,6 @@ Many Engineers I talk to are facing an request to move their apps and infrastruc
 
 ![image](/pics/test.png)
 
+<img src="/pics/test.pngg" alt="">
+
 
