@@ -8,4 +8,6 @@ Many Engineers I talk to are facing an request to move their apps and infrastruc
 
 ![Clusters]({{ site.url }}/pics/test.png)
 
+![image](/pics/test.png)
+
 
