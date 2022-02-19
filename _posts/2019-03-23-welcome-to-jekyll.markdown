@@ -38,7 +38,6 @@ But something also want to highlight is that, we also have backup and recovery o
 
 I can also see events here inspections, I can it's, we have a several different inspection tools that you can use. I can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
 
-I could literally spend all day going through TMC, but I'll be more than happy to set up a separate session. So then we can actually deep dive and, you know, try out a couple of things here.
 
 
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
