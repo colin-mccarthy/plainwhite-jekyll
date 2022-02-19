@@ -18,23 +18,36 @@ As you can see, here, I have a couple of different examples deployed, I have an 
 
 So if you want to have an autometed solution for deploying cluster this is that solution. It's automated and works on any cloud.
 
-There's a concept of cluster groups within TMC. So cluster groups allow me to basically bucket these clusters into different groups. So for example, I can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. So as you can see, I have a couple of groups here,
+There's a concept of cluster groups within TMC. So cluster groups allow me to basically bucket these clusters into different groups. So for example, I can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. So as you can see, I have a couple of groups here.
 
-I can basically apply policies such as network policy, security policies, Quota Management, you know, things I can do things such as, you know, if I didn't want my developers deploying applications from an unknown Container Registry outside of our network, I can prevent them from doing so. I can do a lot of things such as, like I said, before, image registry policies, I can block the latest tag, which is kind of a best practice, not use the latest tag, you know, to actually version your images. So you can really control the behavior and enforce good behavior within your environment.
+```
+Group Pic
+```
+
+I can apply policies such as network policy, security policies, and Quota Management. If I didn't want my developers deploying applications from an unknown Container Registry outside of our network, I can prevent them from doing so. I can do a lot of things such as, image registry policies, I can block the latest tag, which is a best practice. So you can really control the behavior and enforce good practices within your environment.
 
 This is pretty extensive, you also get a dashboard view of what's actually going on in this environment. As you can see, I have a couple of different policies that are being violated, especially my security policies here. So I can quickly glance at any bad actors within this environment, to see what actually is going on there.
 
-And you can set these as audit rules as well. So when you're first rollout TMC or you don't want to be too restrictive to your developers, you can set an audit setting that basically only alerts you when they're violating these policies. And that way, you can, have a nice conversation with the developer and say, this is how you should be doing things.
-
-But something also want to highlight is that, we also have backup and recovery of these Kubernetes clusters. So, data protection, I can go in and make multiple backups, I can select the backup, and then restore from that all these backups can be, set on some type of cron schedule where, I can run every night or you know, every hour or whatever, what have you.
-
-I can also see events here inspections, I can it's, we have a several different inspection tools that you can use. I can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
+```
+policy pic
+```
 
 
 
+And you can set these as audit rules as well. So when you're first rollout TMC or you don't want to be too restrictive to your developers, you can set an audit setting that only alerts you when they're violating these policies. And that way, you can, have a nice conversation with the developer and say, this is how you should be doing things.
 
+
+There are several different inspection tools that you can use. I can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
+
+```
+scan pic
+```
+
+
+
+```
 Cluster API
-
+```
 
 Tanzu Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle, SIG in this context stands for special interest group. And this is the group that is focused on streamlining and improving the Cluster Lifecycle Management for Kubernetes clusters, In an Open Source fashion. Cluster API provides Kubernetes style API's and patterns. These are declarative API's that allow you as a cluster operator, or cluster admin to declaratively define what a cluster should look like, and then have cluster API. Reconcile that or realize that declarative definition.
 
