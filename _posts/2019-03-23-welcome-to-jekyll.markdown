@@ -16,7 +16,7 @@ This is why I want to bring up the idea of an abstration layer for Kubernetes. Y
 
 As you can see, here, I have a couple of different examples deployed, I have an AKs cluster, I have a vSphere cluster, I have, an Eks, cluster GCP clusters, I can manage all these clusters from one single pane of glass.
 
-So if you want to have an autometed solution for deploying cluster this is that solution. Does that make sense? This takes the Vsphere Cluster API subject we just spoke about to the next level. It's automated and works on any cloud.
+So if you want to have an autometed solution for deploying cluster this is that solution. It's automated and works on any cloud.
 
 There's a concept of cluster groups within TMC. So cluster groups allow me to basically bucket these clusters into different groups. So for example, I can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. So as you can see, I have a couple of groups here,
 
