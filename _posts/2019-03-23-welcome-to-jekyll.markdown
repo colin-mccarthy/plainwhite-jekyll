@@ -8,7 +8,7 @@ Many Engineers I talk to are facing an request to move their apps and infrastruc
 
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
 
-![image](/plainwhite-jekyll/pics/test.png){: width="250" }
+![image](/plainwhite-jekyll/pics/test.png){: width="450" }
 
 <img src="/plainwhite-jekyll/pics/test.png" alt="">
 
