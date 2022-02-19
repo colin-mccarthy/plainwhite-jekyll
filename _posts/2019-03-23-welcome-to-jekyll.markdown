@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Integrating razorpay into your webapp"
+title:  "Mission Control as an abstration layer for Kubernetes"
 date:   2020-02-24 21:03:36 +0530
 categories: Javascript NodeJS
 ---
