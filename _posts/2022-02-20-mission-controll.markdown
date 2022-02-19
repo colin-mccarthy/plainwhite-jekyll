@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Mission Control as an abstration layer for Kubernetes"
+date:   2022-02-22 21:03:36 +0530
 categories: Kubernetes Cloud Mission-Control
 ---
 Many Engineers I talk to are facing a challenge, they have been asked to move their apps and infrastructure to a particular cloud provider. They are often asking me about going fully GCP native or fully Azure native. A lot of the time they may have already gone down this path before with another cloud provider and are being asked to move now. They may have gone all in with AWS a year or two ago and now they need to move away from Amazon. This is a common trend I'm hearing all the time.
