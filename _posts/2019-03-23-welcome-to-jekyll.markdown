@@ -14,5 +14,5 @@ Many Engineers I talk to are facing an request to move their apps and infrastruc
 
 ![image-title-here](/plainwhite-jekyll/pics/test.png){:class="img-responsive"}
 
-![Hello World](/pics/test.png)
+
 
