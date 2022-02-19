@@ -10,7 +10,7 @@ future: true
 
 ## Images
 
-Examples:
+Examples for adding images into posts
 
 ```yaml
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
