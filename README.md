@@ -2,7 +2,7 @@
 
 ## Future dated posts are not *automatically rendered* at or after the prescribed time
 
-you need to add future: true to config.yaml
+You need to add future: true to config.yaml
 
 ```yaml
 future: true
@@ -10,7 +10,7 @@ future: true
 
 ## Images
 
-examples:
+Examples:
 
 ```yaml
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
