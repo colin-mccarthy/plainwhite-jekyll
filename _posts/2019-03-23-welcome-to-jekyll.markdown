@@ -14,7 +14,7 @@ Tanzu Mission control uses an opesource project named Cluster API to handle the 
 
 One of the goals of Cluster API, is to provide lifecycle management for Kubernetes clusters and work both on premises and in the public cloud, which means that users can experience a similar user experience, whether running clusters on premises environment like Vsphere or a public cloud environment.
 
-I'd like to provide some definitions for frequently used terms. The first is a management cluster, a management cluster is a Kubernetes cluster and into this Kubernetes cluster have been installed the cluster API components. This enables this management cluster to manage the lifecycle of other Kubernetes clusters. These other Kubernetes clusters are properly known in cluster API, as workload clusters, these are the clusters on the top of this slide, and this is where you will deploy your applications and workloads.
+I'd like to provide some definitions for frequently used terms. The first is a management cluster, a management cluster is a Kubernetes cluster and into this Kubernetes cluster have been installed the cluster API components. This enables this management cluster to manage the lifecycle of other Kubernetes clusters. These other Kubernetes clusters are properly known in cluster API, as workload clusters. 
 
 To accomplish Lifecycle Management cluster API also uses the concept of a provider. Providers have names like cluster API provider for AWS, or cluster API provider for vSphere. These providers, provide the support for an integration with a particular infrastructure platform.
 
