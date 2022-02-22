@@ -25,7 +25,7 @@ Creation:
 ```
 
 
-Tanzu Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API helps provides lifecycle management for Kubernetes clusters and works both on premises and in the public cloud, which means that users can experience a similar user experience, whether running clusters on premises environment like Vsphere or in a public cloud environment. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle. Cluster API provides Kubernetes style declarative API's that allow you to define what a cluster should look like. This allows Tanzu Mission Control to manage the creation, managment and then some time later the eventual deletion of your clusters. To accomplish Lifecycle Management cluster API uses the concept of a provider. These providers, allow the support for an integration with a particular infrastructure platform. You can think of these much like how provides work in something like Terrafrom, or how modules work in Ansible. As a cluster admin you should be able to create Kubernetes clusters by filling out a few fields in Mission Control, and then have Mission Control actually go out and create the cluster and bootstrap it and get it running to your definition.
+Let's look at how Mission control is able to do all of this behind the scenes. Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle. Cluster API provides Kubernetes style declarative API's that allow you to define what a cluster should look like. This allows Tanzu Mission Control to manage the creation, managment and then some time later the eventual deletion of your clusters. To accomplish Lifecycle Management cluster API uses the concept of a provider. These providers, allow the support for an integration with a particular infrastructure platform. You can think of these much like how provides work in something like Terrafrom, or how modules work in Ansible. As a cluster admin you should be able to create Kubernetes clusters by filling out a few fields in Mission Control, and then have Mission Control actually go out and create the cluster and bootstrap it and get it running to your definition.
 
 
 ```
@@ -64,6 +64,8 @@ Abstration layer:
 ```
 
 Your developers don't care about where the clusters live as long as they have a Kubernetes dial tone to launch their apps on. You shouldn't need to care what cloud provider your using as long as you have a Cloud dial tone to launch your clusters on.
+
+Cluster API helps provides lifecycle management for Kubernetes clusters and works both on premises and in the public cloud, which means that users can experience a similar user experience, whether running clusters on premises environment like Vsphere or in a public cloud environment.
 
 
 
