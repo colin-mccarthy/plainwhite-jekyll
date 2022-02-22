@@ -18,32 +18,27 @@ As you can see I have a couple examples of TKG clusters deployed into different 
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
 
 
-Tanzu Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API helps provides lifecycle management for Kubernetes clusters and works both on premises and in the public cloud, which means that users can experience a similar user experience, whether running clusters on premises environment like Vsphere or in a public cloud environment. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle.
+Tanzu Mission control uses an opesource project named Cluster API to handle the bootstrapping of Kubernetes clusters. Cluster API helps provides lifecycle management for Kubernetes clusters and works both on premises and in the public cloud, which means that users can experience a similar user experience, whether running clusters on premises environment like Vsphere or in a public cloud environment. Cluster API is part of an effort driven by a group known as SIG Cluster Lifecycle. Cluster API provides Kubernetes style declarative API's that allow you to define what a cluster should look like. This allows Tanzu Mission Control to manage the creation, managment and then some time later the eventual deletion of your clusters. To accomplish Lifecycle Management cluster API uses the concept of a provider. These providers, allow the support for an integration with a particular infrastructure platform. You can think of these much like how provides work in something like Terrafrom, or how modules work in Ansible. As a cluster admin you should be able to create Kubernetes clusters by filling out a few fields in Mission Control, and then have Mission Control actually go out and create the cluster and bootstrap it and get it running to your definition.
 
 
-Cluster API provides Kubernetes style API's and patterns. These are declarative API's that allow you to define what a cluster should look like, and then have Tanzu Mission Control manage the creation, managment and later the eventual deletion of your clusters. To accomplish Lifecycle Management cluster API uses the concept of a provider. Providers have names like Cluster API provider for AWS, or Cluster API provider for vSphere, etc.. These providers, allow the support for an integration with a particular infrastructure platform. You can think of these much like how provides work in something like Terrafrom, or how modules work in Ansible. As a cluster admin you should be able to create Kubernetes clusters by filling out a few fileds in Mission Control, and then have the Cluster API Management cluster in this case, actually go out and create the cluster and bootstrap it and get it running to your definition.
 
-
-Creation: 
 
 ```
-Group Pic
+Creation: 
 ```
 
 
 Management:
 
-There's a concept of cluster groups within TMC. So cluster groups allow me to basically bucket these clusters into different groups. So for example, I can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. So as you can see, I have a couple of groups here.
-
-I can apply policies such as network policy, security policies, and Quota Management. If I didn't want my developers deploying applications from an unknown Container Registry outside of our network, I can prevent them from doing so. I can do a lot of things such as, image registry policies, I can block the latest tag, which is a best practice. So you can really control the behavior and enforce good practices within your environment.
+There's a concept of cluster groups within Mission Control. So cluster groups allow me to basically bucket these clusters into different groups. So for example, You can have a nonprofit group, I have a production cluster group, and then I can basically apply policies down to those different groups. You can apply policies such as network policy, security policies, and Quota Management. If you didn't want developers deploying applications from an unknown Container Registry outside of our network, You can prevent them from doing so. You can do a lot of things such as, image registry policies, You can block the latest tag, which is a best practice. So you can really control the behavior and enforce good practices within your environment.
 
 This is pretty extensive, you also get a dashboard view of what's actually going on in this environment. As you can see, I have a couple of different policies that are being violated, especially my security policies here. So I can quickly glance at any bad actors within this environment, to see what actually is going on there.
 
 
-And you can set these as audit rules as well. So when you're first rollout TMC or you don't want to be too restrictive to your developers, you can set an audit setting that only alerts you when they're violating these policies. And that way, you can, have a nice conversation with the developer and say, this is how you should be doing things.
+And you can set these as audit rules as well. So when you're first rollout Mission Control or you don't want to be too restrictive to your developers, you can set an audit setting that only alerts you when they're violating these policies. And that way, you can, have a nice conversation with the developer and say, this is how you should be doing things.
 
 
-There are several different inspection tools that you can use. I can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
+There are several different inspection tools that you can use. You can do scans such as a performance scan, the CIS benchmark, CIS benchmark is from the Center for Information Security. This is pretty much like all your best practices of how you should be configuring your Kubernetes clusters. You can basically run these scans periodically on your clusters to make sure they're aligning to best practices and principles.
 
 
 Eventual deletion:
@@ -52,11 +47,6 @@ Eventual deletion:
 blank
 ```
 
-
-
-```
-blank
-```
 
 Consistent Kubernetes dial tone no matter what cloud:
 
