@@ -6,13 +6,13 @@ categories: Kubernetes Cloud Mission-Control
 ---
 
 
-Many Engineers I talk to nowadays are facing a challenge, they have been asked to move their companies apps and infrastructure to a particular cloud provider. They are often asking me about the downside to going fully GCP native or, fully Azure native etc.. A lot of the time they may have already gone down this path before with another cloud provider, and now are being asked to move yet again. For example, they may have gone all in with AWS a year or two ago and now need to move away from Amazon. This is a common trend I'm hearing a lot. My question to them is this, if you get asked again a year from now, how quickly can you untangle yourself from that cloud provider and move your apps and clusters?
+Many Engineers I talk to nowadays are facing a challenge, they have been asked to move their companies apps and infrastructure to a particular cloud provider. They are often asking me about the downside to going fully GCP native or, fully Azure native etc.. A lot of the time they may have already gone down this path before with another cloud provider, and now are being asked to move yet again. For example, they may have gone all in with AWS a year or two ago and now need to move away from Amazon and go into Azure. My question to them is this, if you need to move again a year from now, how quickly can you untangle yourself from that cloud provider and move your apps and clusters? 
 
-This is why I want to bring up the idea of an abstration layer for Kubernetes Cluster lifecyle managment. Your developers don't care about where the clusters live as long as they have a Kubernetes dial tone. VMware's Tanzu Mission Control gives you an interface to launch and manage your Kubernetes clusters in any or all of the major cloud providers and also on prem Vsphere environments. You can create and delete clusters from a single pane of glass using a SaaS based tool and all from your web browser.
+This is why I want to bring up the idea of an abstration layer for Kubernetes Cluster lifecyle managment. VMware's Tanzu Mission Control gives you an interface to launch and manage your Kubernetes clusters in any or all of the major cloud providers and also on prem Vsphere environments. You can create and delete clusters from a single pane of glass using a SaaS based tool and all from your web browser.
 
-Tanzu Mission Control uses VMware's flavor of Kubernetes called Tanzu Kubernetres Grid or TKG for short. TKG gives you the consistent Kubernetes dial tone no matter what cloud you are deploying your workloads into. There are no scripts that need to be run or command line tools needed. You simply log into your Mission Control instance and deploy or delete your clusters from there.
+Tanzu Mission Control uses VMware's flavor of Kubernetes called Tanzu Kubernetres Grid or TKG for short. TKG gives you the consistent Kubernetes dial tone no matter what cloud you are deploying your clusters into. There are no scripts that need to be run or command line tools needed. You simply log into your Mission Control instance and deploy or delete your clusters from there.
 
-As you can see I have a couple examples of TKG clusters deployed into different clouds, I have a TKG clusters in AWS, a TKG cluster in vSphere, and others in Google Cloud ans Azure. I can manage the lifecycle of all these clusters from one single pane of glass. So in the event you need to move to a new cloud provider it's as easy as inputting your account details and launching a new TKG cluster.
+As you can see I have a couple examples of TKG clusters deployed into different clouds, I have a TKG clusters in AWS, a TKG cluster in vSphere, and others in Google Cloud ans Azure. I can manage the lifecycle of all these clusters from one single pane of glass.Using one single flavor of Kubernetes. So in the event you need to move to a new cloud provider it's as easy as inputting your cloud provider account details and launching a new TKG cluster. Think of the freedom this provides you to quickly pivot to a new cloud or a hybrid cloud model. Let's also think about your leverage for future contract renewals if the cloud provider's prices go up or your discounted pricing runs out, the dreaded vendor lock in scenario.
 
 
 ![Clusters]({{ site.url }}/plainwhite-jekyll/pics/test.png)
@@ -49,6 +49,8 @@ blank
 
 
 Consistent Kubernetes dial tone no matter what cloud:
+
+Your developers don't care about where the clusters live as long as they have a Kubernetes dial tone.
 
 
 I'd like to provide some definitions for frequently used terms. The first is a management cluster, a management cluster is a Kubernetes cluster and into this Kubernetes cluster have been installed the cluster API components. This enables this management cluster to manage the lifecycle of other Kubernetes clusters. These other Kubernetes clusters are properly known in cluster API, as workload clusters. 
