@@ -18,7 +18,7 @@ Kubernetes has revolutionized the way we deploy and manage containerized applica
 
 What are Pod Security Standards?
 
-Pod Security Standards, introduced in Kubernetes version 1.14, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
+[Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/), introduced in Kubernetes version 1.14, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
 
 The Pod Security Standards define three different policies to broadly cover the security spectrum. These policies are cumulative and range from highly-permissive to highly-restrictive. This guide outlines the requirements of each policy.
 
@@ -60,7 +60,7 @@ Keep in mind you can also apply Pod Security Standards to multiple namespaces at
 
 
 
-Enable Pod Security Standards checking at the namespace namespace level
+ [Enable Pod Security Standards](https://kubernetes.io/docs/tutorials/security/ns-level-pss/) checking at the namespace level
 
 ```
 kubectl label --overwrite ns example \
@@ -149,8 +149,9 @@ Containers must not set runAsUser to 0
             runAsUser: 10000
 ```
 
+https://kubernetes.io/docs/tutorials/security/seccomp/
 
-Seccomp stands for secure computing mode and has been a feature of the Linux kernel since version 2.6.12. It can be used to sandbox the privileges of a process, restricting the calls it is able to make from userspace into the kernel. Kubernetes lets you automatically apply seccomp profiles loaded onto a node to your Pods and containers.
+[Seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/) stands for secure computing mode and has been a feature of the Linux kernel since version 2.6.12. It can be used to sandbox the privileges of a process, restricting the calls it is able to make from userspace into the kernel. Kubernetes lets you automatically apply seccomp profiles loaded onto a node to your Pods and containers.
 
 Allowed Values
 
