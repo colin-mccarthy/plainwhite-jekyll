@@ -70,7 +70,41 @@ kubectl label --overwrite ns example \
    pod-security.kubernetes.io/warn-version=latest
 ```
 
-deployment.yaml
+Here is a vanilla deployment of an orgchart ap that has been configured to use the Vault agaent side car.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orgchart
+  labels:
+    app: orgchart
+spec:
+  selector:
+    matchLabels:
+      app: orgchart
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "internal-app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "internal/data/database/config"
+        vault.hashicorp.com/agent-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
+      labels:
+        app: orgchart
+    spec:
+      serviceAccountName: internal-app
+      containers:
+        - name: orgchart
+          image: jweissig/app:0.0.1
+ ```
+ 
+ This deployment would be blocked as it does not pass the requirements of the restricted pod security standards mentioned above.
+
+Here is the new deployment manifest with the changes made to satisfy the [restricted pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted):
+
+sec-deployment.yaml
 
 ```yaml
 apiVersion: apps/v1
@@ -109,7 +143,7 @@ spec:
           image: jweissig/app:0.0.1
 ```
 
-Here are the changes made to satisfy the [restricted pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted):
+Let's cover what changed and why.
 
 Privilege Escalation:
 Privilege escalation (such as via set-user-ID or set-group-ID file mode) should not be allowed.
