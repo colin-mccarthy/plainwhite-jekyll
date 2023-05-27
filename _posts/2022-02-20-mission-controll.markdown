@@ -70,7 +70,7 @@ kubectl label --overwrite ns example \
 
 deployment.yaml
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
