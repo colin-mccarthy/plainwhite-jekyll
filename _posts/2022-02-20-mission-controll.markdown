@@ -70,7 +70,7 @@ kubectl label --overwrite ns example \
    pod-security.kubernetes.io/warn-version=latest
 ```
 
-Here is a vanilla deployment of an orgchart app that has been configured to use the Vault agaent side car. The tutorial for this deployment can be found [here](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar)
+Here is a vanilla deployment of an orgchart app that has been configured to use the Vault agent sidecar. The tutorial for this deployment can be found [here](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar)
 
 ```yaml
 apiVersion: apps/v1
