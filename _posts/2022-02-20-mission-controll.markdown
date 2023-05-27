@@ -2,7 +2,7 @@
 layout: post
 title:  "Vault side car pod security standards"
 date:   2023-06-01 21:03:36 +0530
-categories: Kubernetes Cloud 
+categories: Kubernetes Cloud Vault
 ---
 
 
@@ -19,6 +19,20 @@ Kubernetes has revolutionized the way we deploy and manage containerized applica
 What are Pod Security Standards?
 
 Pod Security Standards, introduced in Kubernetes version 1.14, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
+
+The Pod Security Standards define three different policies to broadly cover the security spectrum. These policies are cumulative and range from highly-permissive to highly-restrictive. This guide outlines the requirements of each policy.
+
+Profile	Description
+
+Privileged:
+Unrestricted policy, providing the widest possible level of permissions. This policy allows for known privilege escalations.
+
+Baseline:
+Minimally restrictive policy which prevents known privilege escalations. Allows the default (minimally specified) Pod configuration.
+
+Restricted:
+Heavily restricted policy, following current Pod hardening best practices.
+
 
 
 Why are Pod Security Standards Important?
