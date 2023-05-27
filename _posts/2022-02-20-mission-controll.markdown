@@ -56,7 +56,7 @@ Enforcing Pod Security Standards:
 
 To enforce Pod Security Standards in Kubernetes, you can leverage a built-in feature. 
 
-Pod Security admission (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the `restricted` Pod Security Standard, one namespace at a time.
+[Pod Security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the `restricted` Pod Security Standard, one namespace at a time.
 
 Keep in mind you can also apply Pod Security Standards to multiple namespaces at once at the cluster level. 
 
