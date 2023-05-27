@@ -52,15 +52,12 @@ Implementing Pod Security Standards is vital for several reasons:
 Enforcing Pod Security Standards:
 
 
-To enforce Pod Security Standards in Kubernetes, you can leverage built-in features and third-party tools. Here are a few key approaches:
+To enforce Pod Security Standards in Kubernetes, you can leverage a built-in feature. 
 
-1. Pod Security Policies (PSP): Pod Security Policies define a set of constraints that pods must meet to be scheduled on a Kubernetes cluster. PSPs can be created and enforced at the cluster level, ensuring consistent security policies across all pods.
+Pod Security admission (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the baseline Pod Security Standard, one namespace at a time.
 
-2. Kubernetes Admission Controllers: Admission Controllers intercept and validate requests to the Kubernetes API server. By enabling and configuring admission controllers like "PodSecurityPolicy" and "MutatingAdmissionWebhook," you can enforce Pod Security Standards during pod creation and modification.
+You can also apply Pod Security Standards to multiple namespaces at once at the cluster level. 
 
-3. Container Runtimes: Choose container runtimes that provide additional security features such as secure defaults, user namespaces, and seccomp profiles. For example, you can use Docker with seccomp enabled or switch to container runtimes like containerd or CRI-O that offer enhanced security options.
-
-4. Third-Party Tools: Several security-focused tools integrate with Kubernetes to provide advanced pod security capabilities. Examples include tools like Aqua Security, Sysdig Secure, and Falco, which provide runtime monitoring, vulnerability scanning, and intrusion detection capabilities.
 
 
 Enable Pod Security Standards checking at the namespace namespace level
