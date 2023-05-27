@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Vault side car pod security standards"
+title:  "Vault side car Pod Security Standards"
 date:   2023-06-01 21:03:36 +0530
 categories: Kubernetes Cloud Vault
 ---
