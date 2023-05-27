@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Mission Control as an abstration layer for Kubernetes cluster managment"
-date:   2022-02-22 21:03:36 +0530
-categories: Kubernetes Cloud Mission-Control
+title:  "Vault side car pod security standards"
+date:   2023-06-01 21:03:36 +0530
+categories: Kubernetes Cloud 
 ---
 
 
