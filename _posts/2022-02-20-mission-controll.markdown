@@ -108,6 +108,19 @@ spec:
 ```
 
 
+Privilege Escalation 
+Privilege escalation (such as via set-user-ID or set-group-ID file mode) should not be allowed.
+
+```yaml
+          securityContext:
+            allowPrivilegeEscalation: false
+     
+```
+
+
+
+Seccomp stands for secure computing mode and has been a feature of the Linux kernel since version 2.6.12. It can be used to sandbox the privileges of a process, restricting the calls it is able to make from userspace into the kernel. Kubernetes lets you automatically apply seccomp profiles loaded onto a node to your Pods and containers.
+
 vault.hashicorp.com/agent-json-patch - change the injected agent sidecar container using a JSON patch before it is created. This can be used to add, remove, or modify any attribute of the container. For example, setting this to [{"op": "replace", "path": "/name", "value": "different-name"}] will update the agent container's name to be different-name instead of the default vault-agent.
 
 vault.hashicorp.com/agent-init-json-patch - same as vault.hashicorp.com/agent-json-patch, except that the JSON patch will be applied to the injected init container instead.
