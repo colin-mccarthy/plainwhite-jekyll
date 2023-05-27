@@ -171,9 +171,9 @@ Seccomp profile must be explicitly set to one of the allowed values. Both the Un
               type: RuntimeDefault
 ```
 
-vault.hashicorp.com/agent-json-patch - change the injected agent sidecar container using a JSON patch before it is created. This can be used to add, remove, or modify any attribute of the container. For example, setting this to [{"op": "replace", "path": "/name", "value": "different-name"}] will update the agent container's name to be different-name instead of the default vault-agent.
+ -  vault.hashicorp.com/agent-json-patch - change the injected agent sidecar container using a JSON patch before it is created. This can be used to add, remove, or modify any attribute of the container. For example, setting this to [{"op": "replace", "path": "/name", "value": "different-name"}] will update the agent container's name to be different-name instead of the default vault-agent.
 
-vault.hashicorp.com/agent-init-json-patch - same as vault.hashicorp.com/agent-json-patch, except that the JSON patch will be applied to the injected init container instead.
+-  vault.hashicorp.com/agent-init-json-patch - same as vault.hashicorp.com/agent-json-patch, except that the JSON patch will be applied to the injected init container instead.
 
 Conclusion:
 
