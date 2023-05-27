@@ -49,7 +49,42 @@ To enforce Pod Security Standards in Kubernetes, you can leverage built-in featu
 4. Third-Party Tools: Several security-focused tools integrate with Kubernetes to provide advanced pod security capabilities. Examples include tools like Aqua Security, Sysdig Secure, and Falco, which provide runtime monitoring, vulnerability scanning, and intrusion detection capabilities.
 
 
-https://github.com/colin-mccarthy/vault_kind_arm/blob/main/sec_deployment.yaml
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orgchart
+  labels:
+    app: vault-agent-injector-demo
+spec:
+  selector:
+    matchLabels:
+      app: vault-agent-injector-demo
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "internal-app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "internal/data/database/config"
+        vault.hashicorp.com/agent-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
+        vault.hashicorp.com/agent-init-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
+      labels:
+        app: vault-agent-injector-demo
+    spec:
+      serviceAccountName: internal-app
+      containers:
+        - name: orgchart
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+            runAsNonRoot: true
+            runAsUser: 10000
+            seccompProfile:
+              type: RuntimeDefault
+          image: jweissig/app:0.0.1
+```
 
 
 Conclusion:
