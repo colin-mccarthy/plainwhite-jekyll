@@ -116,6 +116,16 @@ Privilege escalation (such as via set-user-ID or set-group-ID file mode) should 
             allowPrivilegeEscalation: false
 ```
 
+Capabilities (v1.22+):	
+Containers must drop ALL capabilities, and are only permitted to add back the NET_BIND_SERVICE capability.
+
+```yaml
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+```
+
 Running as Non-root:	
 Containers must be required to run as non-root users.
 
