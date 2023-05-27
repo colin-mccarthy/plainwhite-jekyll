@@ -30,7 +30,7 @@ Unrestricted policy, providing the widest possible level of permissions. This po
  - Baseline:
 Minimally restrictive policy which prevents known privilege escalations. Allows the default (minimally specified) Pod configuration.
 
- - <span style="color:red">some **Restricted** text</span>:
+ - <span style="color:red">**Restricted**</span>:
 Heavily restricted policy, following current Pod hardening best practices.
 
 
