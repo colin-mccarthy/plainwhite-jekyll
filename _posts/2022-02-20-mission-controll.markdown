@@ -35,6 +35,8 @@ Heavily restricted policy, following current Pod hardening best practices.
 
 
 
+
+
 Why are Pod Security Standards Important?
 
 
@@ -107,6 +109,7 @@ spec:
           image: jweissig/app:0.0.1
 ```
 
+Here are the changes made to satisfy the [restricted pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted):
 
 Privilege Escalation:
 Privilege escalation (such as via set-user-ID or set-group-ID file mode) should not be allowed.
