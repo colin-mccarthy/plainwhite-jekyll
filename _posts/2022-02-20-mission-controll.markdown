@@ -24,10 +24,10 @@ The Pod Security Standards define three different policies to broadly cover the 
 
 Profile	Description
 
- - Privileged:
+ - <span style="color:red">**Privileged**</span>:
 Unrestricted policy, providing the widest possible level of permissions. This policy allows for known privilege escalations.
 
- - Baseline:
+ - <span style="color:red">**Baseline**</span>:
 Minimally restrictive policy which prevents known privilege escalations. Allows the default (minimally specified) Pod configuration.
 
  - <span style="color:red">**Restricted**</span>:
