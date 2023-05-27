@@ -113,8 +113,7 @@ Privilege escalation (such as via set-user-ID or set-group-ID file mode) should 
 
 ```yaml
           securityContext:
-            allowPrivilegeEscalation: false
-     
+            allowPrivilegeEscalation: false     
 ```
 
 
