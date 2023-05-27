@@ -171,6 +171,13 @@ Seccomp profile must be explicitly set to one of the allowed values. Both the Un
               type: RuntimeDefault
 ```
 
+Now that we have satisfied all the pod security standards for our orgchart app we can move on to our Vault side car.
+
+
+
+
+[annotations](https://developer.hashicorp.com/vault/docs/platform/k8s/injector/annotations)
+
  -  vault.hashicorp.com/agent-json-patch - change the injected agent sidecar container using a JSON patch before it is created. This can be used to add, remove, or modify any attribute of the container. For example, setting this to [{"op": "replace", "path": "/name", "value": "different-name"}] will update the agent container's name to be different-name instead of the default vault-agent.
 
 -  vault.hashicorp.com/agent-init-json-patch - same as vault.hashicorp.com/agent-json-patch, except that the JSON patch will be applied to the injected init container instead.
