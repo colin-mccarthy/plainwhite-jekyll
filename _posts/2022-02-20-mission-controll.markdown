@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Vault side car Pod Security Standards"
+title:  "Vault Agent Sidecar Pod Security Standards"
 date:   2023-06-01 21:03:36 +0530
 categories: Kubernetes Cloud Vault
 ---
@@ -208,7 +208,7 @@ Seccomp profile must be explicitly set to one of the allowed values. Both the Un
               type: RuntimeDefault
 ```
 
-Now that we have satisfied all the pod security standards for our orgchart app we can move on to our Vault side car.
+Now that we have satisfied all the pod security standards for our orgchart app we can move on to our Vault agent sidecar.
 
 
 
