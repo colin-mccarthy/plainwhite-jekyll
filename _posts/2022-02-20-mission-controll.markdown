@@ -49,6 +49,9 @@ To enforce Pod Security Standards in Kubernetes, you can leverage built-in featu
 4. Third-Party Tools: Several security-focused tools integrate with Kubernetes to provide advanced pod security capabilities. Examples include tools like Aqua Security, Sysdig Secure, and Falco, which provide runtime monitoring, vulnerability scanning, and intrusion detection capabilities.
 
 
+https://github.com/colin-mccarthy/vault_kind_arm/blob/main/sec_deployment.yaml
+
+
 Conclusion:
 
 
