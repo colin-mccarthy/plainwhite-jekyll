@@ -176,11 +176,24 @@ Now that we have satisfied all the pod security standards for our orgchart app w
 
 
 
-[annotations](https://developer.hashicorp.com/vault/docs/platform/k8s/injector/annotations)
+We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs/platform/k8s/injector/annotations) to change the seccompProfile to the allowed profile of RuntimeDefault.
 
  -  vault.hashicorp.com/agent-json-patch - change the injected agent sidecar container using a JSON patch before it is created. This can be used to add, remove, or modify any attribute of the container. For example, setting this to [{"op": "replace", "path": "/name", "value": "different-name"}] will update the agent container's name to be different-name instead of the default vault-agent.
 
 -  vault.hashicorp.com/agent-init-json-patch - same as vault.hashicorp.com/agent-json-patch, except that the JSON patch will be applied to the injected init container instead.
+
+```yaml
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "internal-app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "internal/data/database/config"
+        vault.hashicorp.com/agent-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
+        vault.hashicorp.com/agent-init-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
+```
+
+You will notice we used both `agent-json-patch` and `agent-init-json-patch`. This is beacasue when the deployment spins up it will use both of these containers. Failure to use both would cause the deployment to be blocked by the `Pod Security Admission` controller.
+
+
 
 Conclusion:
 
