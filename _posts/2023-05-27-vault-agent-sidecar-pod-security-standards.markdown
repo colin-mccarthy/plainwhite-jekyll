@@ -230,7 +230,6 @@ Allowed Values
 
  - RuntimeDefault
  - Localhost
- - 
 
 Now that we have satisfied all the pod security standards for our orgchart app we can move on to our Vault agent sidecar.
 
