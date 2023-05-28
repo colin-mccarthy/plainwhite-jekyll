@@ -56,7 +56,7 @@ Implementing Pod Security Standards is vital for several reasons:
 
 To enforce Pod Security Standards in Kubernetes, you can leverage a built-in feature. 
 
-[Pod Security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the **restricted** Pod Security Standard, one namespace at a time.
+[Pod Security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the **restricted** Pod Security Standard on a single namespace (test-ns).
 
 Keep in mind you can also apply Pod Security Standards to multiple namespaces at once at the cluster level. 
 
@@ -65,7 +65,7 @@ Keep in mind you can also apply Pod Security Standards to multiple namespaces at
  [Enable Pod Security Standards](https://kubernetes.io/docs/tutorials/security/ns-level-pss/) checking at the namespace level
 
 ```
-kubectl label --overwrite ns example \
+kubectl label --overwrite ns test-ns \
    pod-security.kubernetes.io/warn=restricted \
    pod-security.kubernetes.io/warn-version=latest
 ```
