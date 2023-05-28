@@ -101,6 +101,30 @@ spec:
  ```
  
  This deployment would be blocked as it does not pass the requirements of the restricted pod security standards mentioned above.
+ 
+ **Testing**
+
+You can use a --dry-run command to test if any warnings are present on your namespace before applying the restricted policy.
+
+```
+kubectl label --dry-run=server --overwrite ns --all \
+pod-security.kubernetes.io/enforce=restricted
+```
+
+
+when testing with my vanilla deployment I saw the following violations.
+
+
+```
+Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestricted capabilities, runAsNonRoot != true, seccompProfile
+namespace/test-ns labeled (server dry run)
+```
+
+I saw the warnings start to go away once I modified the manifest with all the security settings listed below. The final seccompProfile warning went away when I added the annotations. This --dry-run command is very helpful for seeing exactly what changes to the manifest will remove what warnings. Once you have no warnings you can feel comfortable in deploying the manifest on a cluster/namespace configured with a restricted policy.
+ 
+ 
+ 
+ 
 
 Here is the new deployment manifest with the changes made to satisfy the [restricted pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted):
 
@@ -185,14 +209,6 @@ Containers must not set runAsUser to 0
             runAsUser: 10000
 ```
 
-
-[Seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/) stands for secure computing mode and has been a feature of the Linux kernel since version 2.6.12. It can be used to sandbox the privileges of a process, restricting the calls it is able to make from userspace into the kernel. Kubernetes lets you automatically apply seccomp profiles loaded onto a node to your Pods and containers.
-
-Allowed Values
-
- - RuntimeDefault
- - Localhost
-
 Seccomp (v1.19+):
 Seccomp profile must be explicitly set to one of the allowed values. Both the Unconfined profile and the absence of a profile are prohibited
 
@@ -207,9 +223,15 @@ Seccomp profile must be explicitly set to one of the allowed values. Both the Un
               type: RuntimeDefault
 ```
 
+[Seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/) stands for secure computing mode and has been a feature of the Linux kernel since version 2.6.12. It can be used to sandbox the privileges of a process, restricting the calls it is able to make from userspace into the kernel. Kubernetes lets you automatically apply seccomp profiles loaded onto a node to your Pods and containers.
+
+Allowed Values
+
+ - RuntimeDefault
+ - Localhost
+ - 
+
 Now that we have satisfied all the pod security standards for our orgchart app we can move on to our Vault agent sidecar.
-
-
 
 
 We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs/platform/k8s/injector/annotations) to change the seccompProfile to the allowed profile of RuntimeDefault.
@@ -227,7 +249,7 @@ We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs
         vault.hashicorp.com/agent-init-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
 ```
 
-You will notice we added both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers not just the sidecar, there is also an init container. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
+You will notice we added both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers not just the sidecar. There is also an init container that you must be aware of as seen below. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
 
 ```
 colin@colin-PKPF4HHXVY work % k get events -n test-ns
@@ -246,25 +268,7 @@ LAST SEEN   TYPE     REASON              OBJECT                          MESSAGE
 31s         Normal   ScalingReplicaSet   deployment/orgchart             Scaled up replica set orgchart-8cf6b6574 to 1
 ```
 
-**Testing**
 
-You can use a --dry-run command to test if any warnings are present on your namespace before applying the restricted policy.
-
-```
-kubectl label --dry-run=server --overwrite ns --all \
-pod-security.kubernetes.io/enforce=restricted
-```
-
-
-when testing with my vanilla deployment I saw the following violations.
-
-
-```
-Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestricted capabilities, runAsNonRoot != true, seccompProfile
-namespace/test-ns labeled (server dry run)
-```
-
-I saw the warnings start to go away once I modified the manifest with all the security settings listed above. The final seccompProfile warning went away when I added the annotations. This --dry-run command is very helpful for seeing exactly what changes to the manifest will remove what warnings. Once you have no warnings you can feel comfortable in deploying the manifest on a cluster/namespace configured with a restricted policy.
 
 
 **Conclusion:**
