@@ -56,7 +56,7 @@ Implementing Pod Security Standards is vital for several reasons:
 
 To enforce Pod Security Standards in Kubernetes, you can leverage a built-in feature. 
 
-[Pod Security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the `restricted` Pod Security Standard, one namespace at a time.
+[Pod Security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) is enabled by default in v1.23 and later, as it graduated to beta. Pod Security Admission is an admission controller that applies Pod Security Standards when pods are created. In this example, we will enforce the **restricted** Pod Security Standard, one namespace at a time.
 
 Keep in mind you can also apply Pod Security Standards to multiple namespaces at once at the cluster level. 
 
@@ -227,7 +227,7 @@ We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs
         vault.hashicorp.com/agent-init-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
 ```
 
-You will notice we used both `agent-json-patch` and `agent-init-json-patch`. This is becasue when the deployment spins up it will use both of these containers. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
+You will notice we used both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
 
 
 
