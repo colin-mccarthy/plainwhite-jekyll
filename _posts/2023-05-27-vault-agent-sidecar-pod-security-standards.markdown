@@ -227,7 +227,7 @@ We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs
         vault.hashicorp.com/agent-init-json-patch: '[{"op": "replace", "path": "/securityContext/seccompProfile", "value": {"type": "RuntimeDefault"}}]'
 ```
 
-You will notice we used both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
+You will notice we added both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers not just the sidecar, there is also an init container. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
 
 
 
