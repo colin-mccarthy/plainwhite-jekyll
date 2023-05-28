@@ -229,6 +229,23 @@ We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs
 
 You will notice we added both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers not just the sidecar, there is also an init container. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
 
+```
+colin@colin-PKPF4HHXVY work % k get events -n test-ns
+LAST SEEN   TYPE     REASON              OBJECT                          MESSAGE
+31s         Normal   Scheduled           pod/orgchart-8cf6b6574-7kbdn    Successfully assigned test-ns/orgchart-8cf6b6574-7kbdn to vault-worker
+31s         Normal   Pulled              pod/orgchart-8cf6b6574-7kbdn    Container image "hashicorp/vault:1.13.1" already present on machine
+31s         Normal   Created             pod/orgchart-8cf6b6574-7kbdn    Created container vault-agent-init
+31s         Normal   Started             pod/orgchart-8cf6b6574-7kbdn    Started container vault-agent-init
+30s         Normal   Pulled              pod/orgchart-8cf6b6574-7kbdn    Container image "jweissig/app:0.0.1" already present on machine
+30s         Normal   Created             pod/orgchart-8cf6b6574-7kbdn    Created container orgchart
+30s         Normal   Started             pod/orgchart-8cf6b6574-7kbdn    Started container orgchart
+30s         Normal   Pulled              pod/orgchart-8cf6b6574-7kbdn    Container image "hashicorp/vault:1.13.1" already present on machine
+30s         Normal   Created             pod/orgchart-8cf6b6574-7kbdn    Created container vault-agent
+30s         Normal   Started             pod/orgchart-8cf6b6574-7kbdn    Started container vault-agent
+31s         Normal   SuccessfulCreate    replicaset/orgchart-8cf6b6574   Created pod: orgchart-8cf6b6574-7kbdn
+31s         Normal   ScalingReplicaSet   deployment/orgchart             Scaled up replica set orgchart-8cf6b6574 to 1
+```
+
 **Testing**
 
 You can use a --dry-run command to test if any warnings are present on your namespace before applying the restricted policy.
