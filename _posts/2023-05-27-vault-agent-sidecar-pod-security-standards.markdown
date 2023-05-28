@@ -229,6 +229,13 @@ We will use Vault agent [annotations](https://developer.hashicorp.com/vault/docs
 
 You will notice we added both **agent-json-patch** and **agent-init-json-patch**. This is becasue when the deployment spins up it will use both of these containers not just the sidecar, there is also an init container. Failure to use both would cause the deployment to be blocked by the Pod Security Admission controller.
 
+**Testing**
+
+```
+kubectl label --dry-run=server --overwrite ns example \
+pod-security.kubernetes.io/enforce=restricted
+```
+
 
 
 **Conclusion:**
