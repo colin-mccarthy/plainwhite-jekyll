@@ -231,11 +231,23 @@ You will notice we added both **agent-json-patch** and **agent-init-json-patch**
 
 **Testing**
 
+You can use a --dry-run command to test if any warnings are present on your namespace before applying the restricted policy.
+
 ```
-kubectl label --dry-run=server --overwrite ns example \
+kubectl label --dry-run=server --overwrite ns --all \
 pod-security.kubernetes.io/enforce=restricted
 ```
 
+
+when testing with my vanilla deployment I saw the following violations.
+
+
+```
+Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestricted capabilities, runAsNonRoot != true, seccompProfile
+namespace/test-ns labeled (server dry run)
+```
+
+I saw the warnings start to go away once I modified the manifest with all the security settings listed above. The fianl seccompProfile warning went away when I added the annotations. This --dry-run command is very helpful for seeing exactly what changes to the manifest will remove what warnings. Once you have no warnings you can feel comfortable in deploying the manifest on a cluster/namespace configured with a restricted policy.
 
 
 **Conclusion:**
