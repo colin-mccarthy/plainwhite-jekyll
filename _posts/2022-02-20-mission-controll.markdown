@@ -16,7 +16,7 @@ Understanding Pod Security Standards in Kubernetes
 Kubernetes has revolutionized the way we deploy and manage containerized applications at scale. As Kubernetes adoption continues to grow, ensuring the security of the underlying infrastructure becomes paramount. One critical aspect of securing Kubernetes deployments is implementing robust Pod Security Standards. In this blog, we will explore what Pod Security Standards are, why they are crucial, and how you can enforce them to bolster the security of your Kubernetes clusters.
 
 
-What are Pod Security Standards?
+**What are Pod Security Standards?**
 
 [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/), introduced in Kubernetes version 1.14, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
 
@@ -37,7 +37,7 @@ Heavily restricted policy, following current Pod hardening best practices.
 
 
 
-Why are Pod Security Standards Important?
+**Why are Pod Security Standards Important?**
 
 
 Implementing Pod Security Standards is vital for several reasons:
@@ -51,7 +51,7 @@ Implementing Pod Security Standards is vital for several reasons:
 4. Defense in Depth: A multi-layered security approach is crucial for any system. Pod Security Standards provide an additional layer of defense, complementing other security measures you may have implemented, such as network policies, RBAC, and container security scanning.
 
 
-Enforcing Pod Security Standards:
+**Enforcing Pod Security Standards:**
 
 
 To enforce Pod Security Standards in Kubernetes, you can leverage a built-in feature. 
@@ -232,7 +232,7 @@ You will notice we used both `agent-json-patch` and `agent-init-json-patch`. Thi
 
 
 
-Conclusion:
+**Conclusion:**
 
 
 Securing your Kubernetes deployments goes beyond configuring authentication and network policies. Implementing Pod Security Standards is a crucial step towards safeguarding your cluster against potential attacks and unauthorized access. By adhering to these standards, you can enhance the isolation and reduce the attack surface of pods, meet compliance requirements, and strengthen the overall security posture of your Kubernetes infrastructure. Embrace Pod Security Standards and make security an integral part of your Kubernetes deployment strategy.
