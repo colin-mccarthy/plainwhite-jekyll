@@ -116,7 +116,8 @@ when testing with my vanilla deployment I saw the following violations.
 
 
 ```
-Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestricted capabilities, runAsNonRoot != true, seccompProfile
+Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestricted capabilities, 
+runAsNonRoot != true, seccompProfile
 namespace/test-ns labeled (server dry run)
 ```
 
