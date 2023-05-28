@@ -104,7 +104,6 @@ spec:
 
 Here is the new deployment manifest with the changes made to satisfy the [restricted pod security standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted):
 
-sec-deployment.yaml
 
 ```yaml
 apiVersion: apps/v1
