@@ -253,7 +253,7 @@ I saw the warnings start to go away once I modified the manifest with all the se
 **Conclusion:**
 
 
-Securing your Kubernetes deployments goes beyond configuring authentication and network policies. Implementing Pod Security Standards is a crucial step towards safeguarding your cluster against potential attacks and unauthorized access. By adhering to these standards, you can enhance the isolation and reduce the attack surface of pods, meet compliance requirements, and strengthen the overall security posture of your Kubernetes infrastructure. Embrace Pod Security Standards and make security an integral part of your Kubernetes deployment strategy.
+Securing your Kubernetes deployments goes beyond managing secrets, configuring authentication, and network policies. Implementing Pod Security Standards is a crucial step towards safeguarding your cluster against potential attacks and unauthorized access. By adhering to these standards, you can enhance the isolation and reduce the attack surface of pods, meet compliance requirements, and strengthen the overall security posture of your Kubernetes infrastructure. Embrace Pod Security Standards and make security an integral part of your Kubernetes deployment strategy.
 
 
 
