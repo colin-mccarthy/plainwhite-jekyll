@@ -247,7 +247,7 @@ Warning: orgchart-78b559df9c-7zr2w: allowPrivilegeEscalation != false, unrestric
 namespace/test-ns labeled (server dry run)
 ```
 
-I saw the warnings start to go away once I modified the manifest with all the security settings listed above. The fianl seccompProfile warning went away when I added the annotations. This --dry-run command is very helpful for seeing exactly what changes to the manifest will remove what warnings. Once you have no warnings you can feel comfortable in deploying the manifest on a cluster/namespace configured with a restricted policy.
+I saw the warnings start to go away once I modified the manifest with all the security settings listed above. The final seccompProfile warning went away when I added the annotations. This --dry-run command is very helpful for seeing exactly what changes to the manifest will remove what warnings. Once you have no warnings you can feel comfortable in deploying the manifest on a cluster/namespace configured with a restricted policy.
 
 
 **Conclusion:**
