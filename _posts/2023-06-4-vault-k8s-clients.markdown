@@ -123,3 +123,10 @@ Also, refer to the Client Count [FAQ](https://developer.hashicorp.com/vault/docs
 **What is a client?**
 
 Clients are unique applications, services, or users that authenticate to a HashiCorp Vault cluster. For billing and consumption, only unique and active clients during the billing period (monthly in the case of HCP and annual in the case of self-managed Vault) count towards totals. Each client is counted just once within a billing period, regardless of how many times it's been active. When a client authenticates to a cluster, those clients have unlimited access to that cluster for the remainder of the billing period. The client metric is a combination of active identity entities and active non-entity tokens. To learn more, refer to the documentation on What is a Client?.
+
+
+**Notes**
+
+[Kubernetes Auth Method (API)](https://developer.hashicorp.com/vault/api-docs/auth/kubernetes)
+
+alias_name_source (string: "serviceaccount_uid") - Configures how identity aliases are generated. Valid choices are: serviceaccount_uid, serviceaccount_name When serviceaccount_uid is specified, the machine generated UID from the service account will be used as the identity alias name. When serviceaccount_name is specified, the service account's namespace and name will be used as the identity alias name e.g vault/vault-auth. While it is strongly advised that you use serviceaccount_uid, you may also use serviceaccount_name in cases where you want to set the alias ahead of time, and the risks are mitigated or otherwise acceptable given your use case. It is very important to limit who is able to delete/create service accounts within a given cluster. See the [Create an Entity Alias document](https://developer.hashicorp.com/vault/api-docs/secret/identity/entity-alias#create-an-entity-alias) which further expands on the potential security implications mentioned above.
