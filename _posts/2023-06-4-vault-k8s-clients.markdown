@@ -77,7 +77,7 @@ The UID generation process in OpenShift typically involves the following steps:
 
 The specific implementation details of UID generation in OpenShift may vary based on the version and configuration of your OpenShift installation. It's worth noting that OpenShift builds upon Kubernetes, so the underlying concepts and mechanisms are shared between the two platforms.
 
-**Spanning Kubernetes Namespaces**
+**Spanning Kubernetes Namespaces:**
 
 A Kubernetes service account is scoped to a single namespace and cannot span multiple namespaces. A service account provides an identity for processes running in a Kubernetes cluster. It is used to authenticate and authorize access to various Kubernetes resources within a specific namespace.
 
