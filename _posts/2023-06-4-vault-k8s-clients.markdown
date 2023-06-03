@@ -117,4 +117,4 @@ Previously, if there is missing data within your billing period (e.g. data is av
 
 Vault 1.11 introduced Activity Export API allowing you to download the client count aggregated for the user-defined billing period. See the Export activity log using API section for more detail.
 
-Also, refer to the Client Count FAQ which answers various client count questions.
+Also, refer to the Client Count [FAQ](https://developer.hashicorp.com/vault/docs/concepts/client-count/faq) which answers various client count questions.
