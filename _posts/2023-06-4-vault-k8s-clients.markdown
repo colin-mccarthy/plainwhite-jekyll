@@ -10,7 +10,7 @@ Understanding Vault Clients in Kubernetes
 
 **Introduction:**
 
-The kubernetes auth method can be used to authenticate with Vault using a Kubernetes Service Account Token. This method of authentication makes it easy to introduce a Vault token into a Kubernetes Pod.
+The Kubernetes auth method can be used to authenticate with Vault using a Kubernetes Service Account Token. This method of authentication makes it easy to introduce a Vault token into a Kubernetes Pod.
 
 The default endpoint is auth/kubernetes/login. If this auth method was enabled at a different path, use that value instead of kubernetes.
 
