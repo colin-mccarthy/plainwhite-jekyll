@@ -96,3 +96,27 @@ Over time, Kubernetes clusters can become cluttered with outdated components, co
 Improved Security and Compliance: Security vulnerabilities can emerge as software versions become outdated. By repaving Kubernetes clusters, you can update all components to their latest secure versions, reducing the risk of potential security breaches. Repaving also enables you to enforce compliance with security policies and best practices.
 
 Automation and Infrastructure-as-Code: Leverage automation and Infrastructure-as-Code (IaC) tools like Terraform or Kubernetes manifests to define your cluster's desired state. Automating the provisioning and configuration process ensures consistency and repeatability.
+
+
+**Vault Usage Metrics**
+
+Recent enhancements
+
+Starting in Vault 1.9, Vault changed the non-entity token computation logic to deduplicate non-entity tokens. For non-entity tokens (where there is no entity to which tokens map) Vault uses the contents of the token to generate a unique client identifier, based on the namespace ID and policies. The clientID will prevent the same token from being duplicated in the overall client count. Non-entity token tracking is done on access instead of creation. Since the change was made, Vault 1.10 (via the UI, API, documentation, etc.) refers to these non-entity tokens as non-entity clients, and unique entities as entity clients.
+
+Old term (v1.9 and earlier)	New term (v1.10 and later)
+Total active clients	Total clients
+Unique entities	Entity clients
+Non-entity tokens	Non-entity clients
+Vault v1.10 enhanced the usage metrics dashboard so that you can select a billing period easier than before. In addition, you can view client count per auth mount. You can also view changes to clients month over month via the API.
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+Previously, if there is missing data within your billing period (e.g. data is available from January 2021 through October 2021, but April is missing), Vault returned metrics from May through October 2021, because that is the most recent contiguous set. As of Vault 1.11.0, Vault returns all available data within the specified billing period.
+
+Vault 1.11 introduced Activity Export API allowing you to download the client count aggregated for the user-defined billing period. See the Export activity log using API section for more detail.
+
+Also, refer to the Client Count FAQ which answers various client count questions.
