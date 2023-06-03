@@ -23,7 +23,7 @@ curl \
 
 The response will contain a token at auth.client_token:
 
-```JSON
+```json
 {
   "auth": {
     "client_token": "38fe9691-e623-7238-f618-c94d4e7bc674",
