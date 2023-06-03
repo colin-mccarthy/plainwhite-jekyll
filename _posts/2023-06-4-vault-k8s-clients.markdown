@@ -118,3 +118,8 @@ Previously, if there is missing data within your billing period (e.g. data is av
 Vault 1.11 introduced Activity Export API allowing you to download the client count aggregated for the user-defined billing period. See the Export activity log using API section for more detail.
 
 Also, refer to the Client Count [FAQ](https://developer.hashicorp.com/vault/docs/concepts/client-count/faq) which answers various client count questions.
+
+
+**What is a client?**
+
+Clients are unique applications, services, or users that authenticate to a HashiCorp Vault cluster. For billing and consumption, only unique and active clients during the billing period (monthly in the case of HCP and annual in the case of self-managed Vault) count towards totals. Each client is counted just once within a billing period, regardless of how many times it's been active. When a client authenticates to a cluster, those clients have unlimited access to that cluster for the remainder of the billing period. The client metric is a combination of active identity entities and active non-entity tokens. To learn more, refer to the documentation on What is a Client?.
