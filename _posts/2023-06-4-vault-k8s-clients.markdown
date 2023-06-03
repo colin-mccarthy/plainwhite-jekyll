@@ -8,9 +8,43 @@ categories: Kubernetes Cloud Vault
 
 Understanding Vault Clients in Kubernetes
 
-
-
 **Introduction:**
+
+The kubernetes auth method can be used to authenticate with Vault using a Kubernetes Service Account Token. This method of authentication makes it easy to introduce a Vault token into a Kubernetes Pod.
+
+The default endpoint is auth/kubernetes/login. If this auth method was enabled at a different path, use that value instead of kubernetes.
+
+```yaml
+curl \
+    --request POST \
+    --data '{"jwt": "<your service account jwt>", "role": "demo"}' \
+    http://127.0.0.1:8200/v1/auth/kubernetes/login
+```
+
+The response will contain a token at auth.client_token:
+
+```yaml
+{
+  "auth": {
+    "client_token": "38fe9691-e623-7238-f618-c94d4e7bc674",
+    "accessor": "78e87a38-84ed-2692-538f-ca8b9f400ab3",
+    "policies": ["default"],
+    "metadata": {
+      "role": "demo",
+      "service_account_name": "myapp",
+      "service_account_namespace": "default",
+      "service_account_secret_name": "myapp-token-pd21c",
+      "service_account_uid": "aa9aa8ff-98d0-11e7-9bb7-0800276d99bf"
+    },
+    "lease_duration": 2764800,
+    "renewable": true
+  }
+}
+```
+
+
+
+
 
 In a Kubernetes cluster, a UID (User ID) is a unique identifier assigned to each entity, including service accounts. When a service account is created, Kubernetes automatically generates a UID for it. The UID serves as a globally unique identifier for the service account within the cluster.
 
