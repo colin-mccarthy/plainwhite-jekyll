@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Ben Holladay Rickhouse Proof Soft Red Wheat 750ml"
+featured_img: /plainwhite-jekyll/images/Ben-Holladay.jpg
 date:   2024-10-06 
 categories: Bourbon
 ---
