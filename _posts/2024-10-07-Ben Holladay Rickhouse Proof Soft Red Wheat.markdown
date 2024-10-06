@@ -20,7 +20,7 @@ Kubernetes has revolutionized the way we deploy and manage containerized applica
 
 **What are Pod Security Standards?**
 
-![My image Name](/images/benholladay2_color.JPG)
+![My image Name](/plainwhite-jekyll/images/benholladay2_color.JPG)
 
 
 
