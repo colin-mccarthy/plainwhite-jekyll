@@ -15,7 +15,7 @@ Ben Holladay Rickhouse Proof Soft Red Wheat 750ml
 
 Kubernetes has revolutionized the way we deploy and manage containerized applications at scale. As Kubernetes adoption continues to grow, ensuring the security of the underlying infrastructure becomes paramount. One critical aspect of securing Kubernetes deployments is implementing robust Pod Security Standards. In this blog, we will explore what Pod Security Standards are, why they are crucial, and how you can enforce them to bolster the security of your Kubernetes clusters.
 
-<img src="./images/benholladay2_color.JPG" width="450"> 
+<img src="./plainwhite-jekyll/images/benholladay2_color.JPG" width="450"> 
 
 
 **What are Pod Security Standards?**
