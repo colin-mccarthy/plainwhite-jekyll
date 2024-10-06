@@ -19,10 +19,11 @@ Kubernetes has revolutionized the way we deploy and manage containerized applica
 
 
 
-**What are Pod Security Standards?**
+**Benjamin Holladay**
 
 ![My image Name](/plainwhite-jekyll/images/benholladay2_color.JPG)
 
 
+Benjamin Holladay was a transportation businessman known as the “Stagecoach King” after creating the Overland Stage Route to California during the height of the 1849 Gold Rush.
 
-Pod Security Standards, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
+Ben Holladay was born in Nicholas County, Kentucky, on October 19, 1819, to William and Margaret “Peggy” Hughes Holladay. He helped his father lead wagon trains through the Cumberland Gap, learning the transportation business at an early age.
