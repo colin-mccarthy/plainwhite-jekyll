@@ -18,4 +18,8 @@ Kubernetes has revolutionized the way we deploy and manage containerized applica
 
 **What are Pod Security Standards?**
 
+![My image Name](/pics/ben-holladay/BenHolladay2_LOAcolor.jpg)
+
+
+
 Pod Security Standards, are a set of best practices and policies designed to enhance the security posture of pods, which are the basic units of deployment in Kubernetes. These standards enable cluster administrators to define and enforce security policies that pods must adhere to before they can run on the cluster.
